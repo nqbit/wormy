@@ -42,7 +42,7 @@ reg [1:0] tail_x, tail_x_new;
 reg [1:0] tail_y, tail_y_new;
 reg [NumCells-1:0] arena_dir0;
 reg [NumCells-1:0] arena_dir1;
-reg [3:0] head_idx, tail_idx, head_idx_new, tail_idx_new;
+wire [3:0] head_idx, tail_idx, head_idx_new, tail_idx_new;
 
 assign head_idx = {head_y, head_x};
 assign tail_idx = {tail_y, tail_x};
