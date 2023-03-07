@@ -1,0 +1,96 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - wormy.v
+    - multiplexer.v
+    - user_input.v
+    - wormy_top.v
+  top_module:  "nqbit_wormy_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Nathaniel Quillin"
+  title:        "Wormy"
+  language:     "Verilog"
+  description:  "Mc. Womry Pants squirms like a worm and grows just as fast."
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Wormy is a very simple, addictive last person video game. This last
+      person, open-world game takes you down the path of an earth worm.
+
+      Wormy's world is made up of a 4x4 grid represented by 3 16-bit arrays:
+      Direction[0], Direction[1], and Occupied. The Direction[x] maps keep
+      track of which way a segment of worm should be moving if it is on and
+      Occupied keeps track of whether or not the grid location is occupied.
+
+      Example Occupied Grid:
+         ┌─────────┐
+         │ X X X X │
+         │       X │
+         │       X │
+         │         │
+         └─────────┘
+
+      In addition to direction and occupied there are also pointers to the
+      head and the tail. The same grid would look something like the following:
+
+      Example Occupied Grid with head(H) and tail(T) highlighted:
+         ┌─────────┐
+         │ T X X X │
+         │       X │
+         │       H │
+         │         │
+         └─────────┘
+
+      TODO: Details about collisions
+      TODO: Details about growth
+      TODO: Details about the multiplexer
+      TODO: Details about the button input
+
+
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      After reset, you should see a single pixel moving along the display and it should grow every TODO seconds.
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - button0
+    - button1
+    - button2
+    - button3
+    - none
+    - none
+
+# A description of what the outputs do
+  outputs:
+    - A0 - Multiplexer channel A to be tied to a an array of 16 multiplexed LEDs
+    - A1
+    - A2
+    - A3
+    - B0 - Multiplexer channel B to be tied to a an array of 16 multiplexed LEDs
+    - B1
+    - B2
+    - B3
+
+# The following fields are optional
+  tag:          "game, display" # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     300     # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
