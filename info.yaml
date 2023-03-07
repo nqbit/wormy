@@ -10,7 +10,7 @@ project:
     - multiplexer.v
     - user_input.v
     - wormy_top.v
-  top_module:  "nqbit_wormy_top"      # put the name of your top module here, make it unique by prepending your github username
+  top_module:  "wormy_top"      # put the name of your top module here, make it unique by prepending your github username
 
 # Keep track of the submission yaml
 yaml_version: 3.0
