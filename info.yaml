@@ -37,12 +37,11 @@ documentation:
     Example Occupied Grid:
     
     ```
-         ┌─────────┐
-         │ X X X X │
-         │       X │
-         │       X │
-         │         │
-         └─────────┘
+       _________
+      | X X X X |
+      |       X |
+      |       X |
+      |_________|
     ```
 
     In addition to direction and occupied there are also pointers to the head
@@ -51,12 +50,11 @@ documentation:
     Example Occupied Grid with head(H) and tail(T) highlighted:
 
     ```
-         ┌─────────┐
-         │ T X X X │
-         │       X │
-         │       H │
-         │         │
-         └─────────┘
+       _________
+      | T X X X |
+      |       X |
+      |       H |
+      |_________|
     ```
 
     BOOM! Wormy shouldn't run into itself. If its head hits any part of its
@@ -87,7 +85,7 @@ documentation:
     It might look something like this:
 
     ```
-                                                   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                              xxxxxxxxxxxxxxxxx
                                             xx
                                             x
                                             x
@@ -133,15 +131,15 @@ documentation:
     Wires (A1-4, B1-4) map to each location on the game arena (4x4 grid):
 
     ```
-      A1│   │   │   │
-      ──┼───┼───┼───┼───
-      A2│   │   │   │
-      ──┼───┼───┼───┼───
-      A3│   │   │   │
-      ──┼───┼───┼───┼───
-      A4│   │   │   │
-      ──┼───┼───┼───┼───
-        │B1 │B2 │B3 │B4
+      A1|   |   |   |
+      __________________
+      A2|   |   |   |
+      __________________
+      A3|   |   |   |
+      __________________
+      A4|   |   |   |
+      __________________
+        |B1 |B2 |B3 |B4
     ```
     
     When B's voltage is OFF the LED's state changes to ON if A is also ON.
@@ -155,15 +153,15 @@ documentation:
     over the entire period of time.
     
     ```
-      A1│   │▓▓▓│   │
-      ──┼───┼───┼───┼───
-      A2│   │▒▒▒│   │
-      ──┼───┼───┼───┼───
-      A3│   │░░░│   │
-      ──┼───┼───┼───┼───
-      A4│   │   │   │
-      ──┼───┼───┼───┼───
-        │B1 │B2 │B3 │B4
+      A1|   | O |   |
+      __________________
+      A2|   | o |   |
+      __________________
+      A3|   | . |   |
+      __________________
+      A4|   |   |   |
+      __________________
+        |B1 |B2 |B3 |B4
     ```
 
     Another Example: If you enter a dark cave and point a flashlight straight
